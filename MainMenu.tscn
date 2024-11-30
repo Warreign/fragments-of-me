@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpehnxjc23j6h"]
+
+[ext_resource type="Script" path="res://mainMenu.gd" id="1_lmnop"]
+[ext_resource type="Texture2D" uid="uid://de3y3h4i1xwxt" path="res://art/player_stand.png" id="2_bg"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tojxh"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lmnop")
+
+[node name="Background" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_tojxh")
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("2_bg")
+
+[node name="Header" type="Label" parent="."]
+layout_mode = 0
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.7
+anchor_bottom = 0.3
+theme_override_font_sizes/font_size = 30
+text = "Fragments of me.."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.4
+anchor_top = 0.4
+anchor_right = 0.6
+anchor_bottom = 0.5
+theme_override_font_sizes/font_size = 21
+text = "Start Game"
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.4
+anchor_top = 0.6
+anchor_right = 0.6
+anchor_bottom = 0.7
+theme_override_font_sizes/font_size = 21
+text = "Quit Game"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(1, 1.02021)
+anchor_mode = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bvaw4aeap28ii"]
+[gd_scene load_steps=25 format=4 uid="uid://bvaw4aeap28ii"]
 
 [ext_resource type="TileSet" uid="uid://cmu6ss22756uw" path="res://rooms.tres" id="1_dxj7e"]
 [ext_resource type="Script" path="res://rooms/bedroom.gd" id="2_wypxn"]

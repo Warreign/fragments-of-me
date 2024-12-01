@@ -28,7 +28,7 @@ atlas = ExtResource("7_tfalp")
 region = Rect2(64, 16, 16, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cpp80"]
-size = Vector2(22, 21)
+size = Vector2(29, 26.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vqaja"]
 size = Vector2(23, 18)
@@ -112,10 +112,10 @@ position = Vector2(2, 0)
 texture = SubResource("AtlasTexture_kngn2")
 
 [node name="Safe" parent="." instance=ExtResource("6_2lyar")]
-position = Vector2(42, 25)
+position = Vector2(62, 9)
 
 [node name="InteractionCollider" parent="Safe" index="0"]
-position = Vector2(1, -0.5)
+position = Vector2(-2, -3)
 shape = SubResource("RectangleShape2D_cpp80")
 
 [node name="CollisionCollider" parent="Safe/StaticBody2D" index="0"]

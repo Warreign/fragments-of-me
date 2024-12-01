@@ -11,47 +11,51 @@
 [ext_resource type="Script" path="res://objects/note.gd" id="9_s7hbr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkbd2"]
-size = Vector2(49, 20)
+size = Vector2(48, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b6632"]
 atlas = ExtResource("7_tfalp")
 region = Rect2(0, 48, 48, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pt423"]
+radius = 8.06226
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5wp31"]
 atlas = ExtResource("7_tfalp")
 region = Rect2(48, 48, 16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tvjrf"]
+radius = 8.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kngn2"]
 atlas = ExtResource("7_tfalp")
 region = Rect2(64, 16, 16, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cpp80"]
-size = Vector2(29, 26.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vqaja"]
-size = Vector2(23, 18)
+size = Vector2(16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3fafc"]
 atlas = ExtResource("7_tfalp")
 region = Rect2(128, 32, 16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e0t7r"]
+radius = 6.40312
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q0o7i"]
 atlas = ExtResource("7_tfalp")
 region = Rect2(80, 16, 16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2xng"]
+radius = 7.07107
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vugdh"]
 atlas = ExtResource("7_tfalp")
 region = Rect2(128, 16, 16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qokmx"]
+radius = 6.08276
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u43fs"]
 atlas = ExtResource("7_tfalp")
@@ -98,7 +102,7 @@ position = Vector2(1.71189, 28.7394)
 position = Vector2(23, -38)
 
 [node name="CollisionCollider" parent="Sofa/StaticBody2D" index="0"]
-position = Vector2(0.5, 0)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_mkbd2")
 
 [node name="Sprite2D" parent="Sofa" index="2"]
@@ -108,7 +112,7 @@ texture = SubResource("AtlasTexture_b6632")
 position = Vector2(26, -15)
 
 [node name="CollisionCollider" parent="CoffeeTable/StaticBody2D" index="0"]
-position = Vector2(3, 1)
+position = Vector2(1, 1)
 shape = SubResource("CircleShape2D_pt423")
 
 [node name="Sprite2D" parent="CoffeeTable" index="2"]
@@ -118,7 +122,7 @@ texture = SubResource("AtlasTexture_5wp31")
 position = Vector2(24, -17)
 
 [node name="InteractionCollider" parent="Fire" index="0"]
-position = Vector2(-4, 3)
+position = Vector2(-3, 3)
 shape = SubResource("CircleShape2D_tvjrf")
 
 [node name="Sprite2D" parent="Fire" index="2"]
@@ -126,14 +130,14 @@ position = Vector2(2, 0)
 texture = SubResource("AtlasTexture_kngn2")
 
 [node name="Safe" parent="." instance=ExtResource("6_2lyar")]
-position = Vector2(62, 9)
+position = Vector2(65, 24)
 
 [node name="InteractionCollider" parent="Safe" index="0"]
-position = Vector2(-2, -3)
+position = Vector2(-1, -2)
 shape = SubResource("RectangleShape2D_cpp80")
 
 [node name="CollisionCollider" parent="Safe/StaticBody2D" index="0"]
-position = Vector2(1.5, 1)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_vqaja")
 
 [node name="Sprite2D" parent="Safe" index="2"]
@@ -144,6 +148,7 @@ position = Vector2(-43, -42)
 rotation = -2.45803
 
 [node name="InteractionCollider" parent="TNT" index="0"]
+position = Vector2(-0.631559, -0.775328)
 shape = SubResource("CircleShape2D_e0t7r")
 
 [node name="Sprite2D" parent="TNT" index="2"]
@@ -154,7 +159,7 @@ position = Vector2(-21, -5)
 script = ExtResource("8_yjhmg")
 
 [node name="InteractionCollider" parent="Note1" index="0"]
-position = Vector2(4, -4)
+position = Vector2(2, 0)
 shape = SubResource("CircleShape2D_g2xng")
 
 [node name="Sprite2D" parent="Note1" index="2"]

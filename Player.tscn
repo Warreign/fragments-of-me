@@ -1,17 +1,34 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyn73dg3o7nlh"]
+[gd_scene load_steps=5 format=3 uid="uid://dyn73dg3o7nlh"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_iakjv"]
 [ext_resource type="Texture2D" uid="uid://de3y3h4i1xwxt" path="res://art/player_stand.png" id="2_unkjs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cdyqj"]
-radius = 14.0
-height = 52.0
+radius = 11.6279
+height = 23.2558
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j5k4w"]
+radius = 18.6047
+height = 60.4651
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.43, 0.43)
 script = ExtResource("1_iakjv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
 texture = ExtResource("2_unkjs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.84217e-14, 9.30233)
 shape = SubResource("CapsuleShape2D_cdyqj")
+
+[node name="ReachArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReachArea"]
+position = Vector2(0, 2.32558)
+shape = SubResource("CapsuleShape2D_j5k4w")
+debug_color = Color(0.846175, 0.262715, 0.68216, 0.42)
+
+[connection signal="area_entered" from="ReachArea" to="." method="_on_interactable_enter"]
+[connection signal="area_exited" from="ReachArea" to="." method="_on_interactable_exit"]

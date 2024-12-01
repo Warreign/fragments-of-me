@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=4 uid="uid://dvah4ncg464pc"]
+
+[ext_resource type="Script" path="res://rooms/room.gd" id="1_88f2h"]
+[ext_resource type="TileSet" uid="uid://cmu6ss22756uw" path="res://rooms.tres" id="2_4baxu"]
+[ext_resource type="Script" path="res://rooms/room_tilemap.gd" id="3_2frok"]
+[ext_resource type="Script" path="res://objects/door.gd" id="5_hq4y3"]
+[ext_resource type="PackedScene" uid="uid://b4fkn0abcmmcu" path="res://objects/interactable.tscn" id="8_tdrnk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7yid"]
+size = Vector2(18.1591, 18.4452)
+
+[node name="Basement" type="Node2D"]
+script = ExtResource("1_88f2h")
+
+[node name="RoomTiles" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAACAPv/AgAFAAEAAAABAPv/AgAEAAEAAAAAAPv/AgAHAAYAAAD///v/AgAEAAEAAAD+//v/AgADAAEAAAD+//z/AgADAAIAAAD///z/AgABAAIAAAAAAPz/AgAEAAIAAAABAPz/AgABAAIAAAACAP3/AgAFAAIAAAABAP3/AgABAAIAAAAAAP3/AgABAAIAAAD///3/AgABAAIAAAD+//3/AgADAAIAAAAAAP7/AgABAAIAAAACAPz/AgAFAAIAAAD+//7/AgADAAIAAAD///7/AgABAAIAAAABAP7/AgABAAIAAAACAP7/AgAFAAIAAAD+////AgAAAAMAAAD/////AgAAAAMAAAAAAP//AgAAAAMAAAABAP//AgAAAAMAAAACAP//AgAAAAMAAAA=")
+tile_set = ExtResource("2_4baxu")
+script = ExtResource("3_2frok")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(8, -40)
+scale = Vector2(0.879728, 1.42524)
+zoom = Vector2(4.5, 4.5)
+
+[node name="LastPosition" type="Node2D" parent="."]
+position = Vector2(8, -53)
+
+[node name="Door" parent="." instance=ExtResource("8_tdrnk")]
+script = ExtResource("5_hq4y3")
+atlas_pos_opened = Vector2i(7, 6)
+atlas_pos_closed = Vector2i(4, 0)
+door_tile_pos = Vector2i(0, -5)
+is_locked = false
+scene = "res://rooms/corridor.tscn"
+
+[node name="CollisionShape2D" parent="Door" index="0"]
+position = Vector2(8, -68.5)
+scale = Vector2(0.770965, 0.92165)
+shape = SubResource("RectangleShape2D_i7yid")
+
+[editable path="Door"]

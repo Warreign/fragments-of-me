@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://wt20hvqki72q"]
+[gd_scene load_steps=30 format=4 uid="uid://wt20hvqki72q"]
 
 [ext_resource type="Script" path="res://rooms/bedroom.gd" id="1_8go0i"]
 [ext_resource type="TileSet" uid="uid://cmu6ss22756uw" path="res://rooms.tres" id="2_8gg2e"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://objects/tnt.gd" id="9_6ittu"]
 [ext_resource type="Script" path="res://objects/safe.gd" id="9_p4fl5"]
 [ext_resource type="Script" path="res://objects/note.gd" id="9_s7hbr"]
+[ext_resource type="AudioStream" uid="uid://clrlb0cu00h0e" path="res://music/explosion.mp3" id="10_pa1n5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkbd2"]
 size = Vector2(48, 16)
@@ -140,6 +141,7 @@ texture = SubResource("AtlasTexture_kngn2")
 [node name="Safe" parent="." instance=ExtResource("6_2lyar")]
 position = Vector2(65, 24)
 script = ExtResource("9_p4fl5")
+safe_explosion = ExtResource("10_pa1n5")
 open_safe_texture = SubResource("AtlasTexture_phyff")
 
 [node name="InteractionCollider" parent="Safe" index="0"]

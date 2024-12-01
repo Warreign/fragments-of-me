@@ -10,7 +10,3 @@ start_scene = "res://rooms/bedroom.tscn"
 
 [node name="Door" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_3yva7")
-volume_db = -5.707
-
-[node name="Audio" type="AudioStreamPlayer2D" parent="."]
-volume_db = -5.0

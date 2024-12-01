@@ -28,7 +28,8 @@ func goto_scene(scene_name : String, move_player :bool = true) -> void:
 	
 func _deferred_goto_scene(scene_name : String, move_player : bool) -> void:
 	if (move_player):
-		
+		if (current_scene.scene_file_path != "res://ui/main_menu.tscn"):
+			$Door.play()
 		is_in_menu = false
 	else:
 		is_in_menu = true
@@ -87,6 +88,11 @@ func toggle_time():
 		room_tiles.set_tile_set(preload("res://rooms.tres"))
 	room_tiles.notify_runtime_tile_data_update()
 	time_changed.emit(current_tileset_id == 1)
+	
+func play_sound(sound : AudioStream, volume : float = -5.0):
+	$Audio.set_volume_db(volume)
+	$Audio.set_stream(sound)
+	$Audio.play()
 	
 	
 	

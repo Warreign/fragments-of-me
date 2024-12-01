@@ -1,11 +1,14 @@
 extends Interactable
 
+@export var safe_explosion : AudioStreamMP3
+
 @export var open_safe_texture : Texture2D
 var is_safe_open : bool = false
 
 func _on_interact():
 	if (is_safe_open):
 		$InteractionCollider.set_disabled(true)
+		Controller.play_sound(NoteInteractable.pickup_audio)
 		Hud.show_dialog_panel("Lately, I’ve been feeling more angry for no reason, and I’ve started remembering things that didn’t happen. Conversations, places—things that don’t make sense. It’s getting worse. I need to call the doctor tomorrow. Something’s wrong.")
 		return
 
@@ -21,6 +24,7 @@ func _on_interact():
 		$Sprite2D.set_texture(open_safe_texture)
 		Hud.show_dialog_panel("Take it, safe! Oh, what's in that hole?")
 		is_safe_open = true
+		Controller.play_sound(safe_explosion, -12)
 	
 func get_action_text() -> String:
 	if (!is_safe_open):

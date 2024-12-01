@@ -1,8 +1,11 @@
 extends Door
 
+@export var open_sound : AudioStreamMP3
+
 func _on_interact():
 	if (is_locked):
 		if (Controller.picked_up_crowbar):
+			Controller.play_sound(open_sound)
 			Hud.show_dialog_panel("I'm finally out!")
 			is_locked = false
 		else:

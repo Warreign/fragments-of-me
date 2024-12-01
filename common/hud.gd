@@ -7,6 +7,8 @@ var is_animating : bool
 var percent_shown : float
 var delta : float
 
+@onready var pause_panel : Control = $PauseContainer
+
 @onready var action_label : Label = $MarginContainer/ActionLabel
 
 @onready var dialog_panel : Control = $DialogPanel
@@ -55,11 +57,18 @@ func skip_text_animation():
 func _ready() -> void:
 	action_label.hide()
 	dialog_panel.hide()
+	pause_panel.hide()
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _process(delta: float) -> void:
+	if (Input.is_action_just_pressed("pause")):
+		if (!pause_panel.visible):
+			pause_game()
+		else:
+			unpause_game()
+	
 	if (!is_dialog_shown and Input.is_action_just_pressed("debug_dialog")):
 		show_dialog_panel("ahahahaahahasdasdasdsaasdasdadasdasdasd asdasdasddasdasdasd sdasdasd")
 	
@@ -72,4 +81,18 @@ func _process(delta: float) -> void:
 	if is_animating:
 		update_text_animation()
 	pass
+	
+func pause_game():
+	if (Controller.is_in_menu):
+		return
+	pause_panel.show()
+	Controller.set_handling_movement(false)
+
+func unpause_game():
+	pause_panel.hide()
+	Controller.set_handling_movement(true)
+	
+func main_menu():
+	unpause_game()
+	Controller.goto_main_menu()
 	

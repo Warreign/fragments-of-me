@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://wt20hvqki72q"]
+[gd_scene load_steps=22 format=4 uid="uid://wt20hvqki72q"]
 
 [ext_resource type="Script" path="res://rooms/bedroom.gd" id="1_8go0i"]
 [ext_resource type="TileSet" uid="uid://cmu6ss22756uw" path="res://rooms.tres" id="2_8gg2e"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://cvogxl1ccrhnf" path="res://objects/static_interactable.tscn" id="6_2lyar"]
 [ext_resource type="PackedScene" uid="uid://bghbvcto7nwvq" path="res://objects/door.tscn" id="7_k5bti"]
 [ext_resource type="Texture2D" uid="uid://lyx3tywyiy4n" path="res://art/items.png" id="7_tfalp"]
+[ext_resource type="Script" path="res://objects/lighter.gd" id="8_4uo1c"]
+[ext_resource type="Script" path="res://objects/tnt.gd" id="9_6ittu"]
+[ext_resource type="Script" path="res://objects/safe.gd" id="9_p4fl5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkbd2"]
 size = Vector2(49, 20)
@@ -102,6 +105,8 @@ texture = SubResource("AtlasTexture_5wp31")
 
 [node name="Fire" parent="." instance=ExtResource("6_2lyar")]
 position = Vector2(24, -17)
+script = ExtResource("8_4uo1c")
+is_interactable_once = true
 
 [node name="InteractionCollider" parent="Fire" index="0"]
 position = Vector2(-4, 3)
@@ -113,6 +118,7 @@ texture = SubResource("AtlasTexture_kngn2")
 
 [node name="Safe" parent="." instance=ExtResource("6_2lyar")]
 position = Vector2(42, 25)
+script = ExtResource("9_p4fl5")
 
 [node name="InteractionCollider" parent="Safe" index="0"]
 position = Vector2(1, -0.5)
@@ -128,6 +134,8 @@ texture = SubResource("AtlasTexture_3fafc")
 [node name="TNT" parent="." instance=ExtResource("6_2lyar")]
 position = Vector2(-43, -42)
 rotation = -2.45803
+script = ExtResource("9_6ittu")
+is_interactable_once = true
 
 [node name="InteractionCollider" parent="TNT" index="0"]
 shape = SubResource("CircleShape2D_e0t7r")

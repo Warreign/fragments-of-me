@@ -1,9 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://baytvbk61f0hj"]
+[gd_scene load_steps=4 format=3 uid="uid://baytvbk61f0hj"]
 
 [ext_resource type="Script" path="res://common/hud.gd" id="1_vdfyy"]
-
-[sub_resource type="Theme" id="Theme_hdf3v"]
-default_font_size = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j8hg2"]
 content_margin_left = 30.0
@@ -20,29 +17,36 @@ default_font_size = 30
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_vdfyy")
 
-[node name="MainHud" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -384.0
-offset_bottom = -170.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.50096, 1.35434)
-mouse_filter = 2
-theme = SubResource("Theme_hdf3v")
-
-[node name="MarginContainer" type="MarginContainer" parent="MainHud"]
-layout_mode = 2
+[node name="DialogPanel" type="PanelContainer" parent="."]
+texture_filter = 1
+anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -96.0
+offset_top = -263.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_j8hg2")
+
+[node name="DialogText" type="RichTextLabel" parent="DialogPanel"]
+clip_contents = false
+layout_mode = 2
+theme = SubResource("Theme_1acwp")
+text = "asdasdasdasdasdasdasdasdasdasdasdasdasdasddddddddddddddd"
+drag_and_drop_selection_enabled = false
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -130.642
+offset_bottom = -34.6422
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="ActionLabel" type="Label" parent="MainHud/MarginContainer"]
+[node name="ActionLabel" type="Label" parent="MarginContainer"]
 layout_mode = 2
 theme_type_variation = &"HeaderMedium"
 theme_override_constants/shadow_offset_x = 55
@@ -51,22 +55,3 @@ theme_override_constants/shadow_outline_size = -60
 text = "Test action text"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="DialogPanel" type="PanelContainer" parent="MainHud"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -194.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_j8hg2")
-
-[node name="DialogText" type="RichTextLabel" parent="MainHud/DialogPanel"]
-clip_contents = false
-layout_mode = 2
-theme = SubResource("Theme_1acwp")
-text = "asdasdasdasdasdasdasdasdasdasdasdasdasdasddddddddddddddd"
-drag_and_drop_selection_enabled = false

@@ -20,6 +20,9 @@ size = Vector2(48, 25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_omowa"]
 size = Vector2(42, 21)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hccp4"]
+size = Vector2(45, 21.9999)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a7fu4"]
 size = Vector2(13, 16)
 
@@ -75,6 +78,10 @@ shape = SubResource("RectangleShape2D_6byn0")
 [node name="CollisionCollider" parent="Bed/StaticBody2D" index="0"]
 position = Vector2(20.9999, -36.5001)
 shape = SubResource("RectangleShape2D_omowa")
+
+[node name="CollisionCollider" parent="Bed/StaticBody2D" index="0"]
+position = Vector2(23.4999, -41)
+shape = SubResource("RectangleShape2D_hccp4")
 
 [node name="Sprite2D" parent="Bed" index="2"]
 position = Vector2(20.9999, -36.0001)
@@ -144,11 +151,13 @@ shape = SubResource("RectangleShape2D_q5n7o")
 position = Vector2(5, -8)
 scale = Vector2(0.6875, 0.6875)
 texture = ExtResource("12_tmjeb")
+position = Vector2(0, 3)
 
 [node name="Diary" parent="." instance=ExtResource("3_gjkis")]
 position = Vector2(50, 21)
 rotation = -2.59955
 script = ExtResource("13_talu5")
+script = null
 
 [node name="InteractionCollider" parent="Diary" index="0"]
 shape = SubResource("CircleShape2D_ls8o3")

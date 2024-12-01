@@ -1,4 +1,4 @@
-class_name Note0
+class_name Note5
 extends Interactable
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -6,9 +6,9 @@ func _ready() -> void:
 
 
 func _on_interact():
-	print("Action not implemented")
+	#print("Action not implemented")
 	$Sprite2D.hide()
-	Hud.show_dialog_panel("Doctor says I should keep a diary. He thinks it’ll help me remember things better, keep track of everything that happens. He wants me to call him once a week too, to check in, make sure I’m doing okay. I guess it can’t hurt to try.")
+	Hud.show_dialog_panel("Doctor called me today. He said they’re coming for me—to take me to the hospital. He says I need help, but I won’t go. I won’t g")
 	
 func get_action_text() -> String:
 	return "Press 'Space' to pick up a note fragment"

@@ -1,5 +1,6 @@
 extends Node2D
 
+@export_file("*.tscn") var start_scene
 var current_scene : Node = null
 
 var _is_handling_movement : bool = true
@@ -35,3 +36,16 @@ func set_handling_movement(value : bool):
 
 func is_handling_movement():
 	return _is_handling_movement
+	
+func start_game():
+	assert(start_scene)
+	if (current_scene and current_scene.get_children().has(player)):
+		current_scene.remove_child(player)
+		player = null
+		
+	player = preload("res://Player.tscn").instantiate()
+	goto_scene(start_scene)
+	
+func quit_game():
+	get_tree().quit()
+	

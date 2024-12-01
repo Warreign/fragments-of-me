@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://bao6rbwp37twm"]
+[gd_scene load_steps=6 format=4 uid="uid://bm13k3qawmgwn"]
 
 [ext_resource type="Script" path="res://rooms/bedroom.gd" id="1_8go0i"]
 [ext_resource type="TileSet" uid="uid://cmu6ss22756uw" path="res://rooms.tres" id="2_8gg2e"]
@@ -42,6 +42,5 @@ scene = "res://rooms/kitchen.tscn"
 
 [node name="CollisionShape2D" parent="Hole" index="0"]
 position = Vector2(1.71189, 28.7394)
-scale = Vector2(1, 1)
 
 [editable path="Hole"]

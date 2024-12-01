@@ -1,11 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpehnxjc23j6h"]
+[gd_scene load_steps=4 format=3 uid="uid://crv4av2g28ndn"]
 
 [ext_resource type="Script" path="res://mainMenu.gd" id="1_lmnop"]
 [ext_resource type="Texture2D" uid="uid://de3y3h4i1xwxt" path="res://art/player_stand.png" id="2_bg"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tojxh"]
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

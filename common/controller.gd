@@ -25,7 +25,7 @@ func _deferred_goto_scene(scene_name : String, move_player : bool) -> void:
 		is_in_menu = true
 	
 	if (current_scene):
-		if (move_player):
+		if (move_player and current_scene.get_children().has(player)):
 			current_scene.remove_child(player)
 		get_tree().root.remove_child(current_scene);
 		current_scene.free();

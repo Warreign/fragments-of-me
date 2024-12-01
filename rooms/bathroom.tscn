@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://dl7kckjinvwur"]
+[gd_scene load_steps=13 format=4 uid="uid://dl7kckjinvwur"]
 
 [ext_resource type="TileSet" uid="uid://cmu6ss22756uw" path="res://rooms.tres" id="1_as6q7"]
 [ext_resource type="Script" path="res://rooms/room.gd" id="1_iy5jg"]
@@ -7,42 +7,23 @@
 [ext_resource type="PackedScene" uid="uid://cvogxl1ccrhnf" path="res://objects/static_interactable.tscn" id="5_ohxsq"]
 [ext_resource type="Texture2D" uid="uid://lyx3tywyiy4n" path="res://art/items.png" id="6_pp4ou"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sx3vp"]
-size = Vector2(42, 24)
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gt3vx"]
-radius = 8.0
-height = 32.0
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_bxv5f"]
 atlas = ExtResource("6_pp4ou")
 region = Rect2(64, 0, 32, 16)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_a3q0k"]
-radius = 12.0
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_m5ale"]
-radius = 9.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_grr0t"]
 atlas = ExtResource("6_pp4ou")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8027"]
-size = Vector2(16, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dw65u"]
-size = Vector2(15.5, 11)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rab4"]
+size = Vector2(16, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6ndjj"]
 atlas = ExtResource("6_pp4ou")
 region = Rect2(96, 0, 16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gi46r"]
-size = Vector2(21, 17)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ba3ul"]
-size = Vector2(12, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsibn"]
+size = Vector2(30, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xdbq1"]
 atlas = ExtResource("6_pp4ou")
@@ -74,28 +55,11 @@ position = Vector2(41, -9)
 
 [node name="BathTub" parent="." instance=ExtResource("5_ohxsq")]
 
-[node name="CollisionShape2D" parent="BathTub" index="0"]
-position = Vector2(-33, -20)
-shape = SubResource("RectangleShape2D_sx3vp")
-
-[node name="CollisionShape2D" parent="BathTub/StaticBody2D" index="0"]
-position = Vector2(-34, -21)
-rotation = 1.57079
-shape = SubResource("CapsuleShape2D_gt3vx")
-
 [node name="Sprite2D" parent="BathTub" index="2"]
 position = Vector2(-34, -21)
 texture = SubResource("AtlasTexture_bxv5f")
 
 [node name="Toilet" parent="." instance=ExtResource("5_ohxsq")]
-
-[node name="CollisionShape2D" parent="Toilet" index="0"]
-position = Vector2(-45, 15)
-shape = SubResource("CircleShape2D_a3q0k")
-
-[node name="CollisionShape2D" parent="Toilet/StaticBody2D" index="0"]
-position = Vector2(-49, 15)
-shape = SubResource("CircleShape2D_m5ale")
 
 [node name="Sprite2D" parent="Toilet" index="2"]
 position = Vector2(-47, 15)
@@ -105,13 +69,9 @@ texture = SubResource("AtlasTexture_grr0t")
 [node name="Sink" parent="." instance=ExtResource("5_ohxsq")]
 position = Vector2(51, -16)
 
-[node name="CollisionShape2D" parent="Sink" index="0"]
-position = Vector2(-38, -7)
-shape = SubResource("RectangleShape2D_j8027")
-
-[node name="CollisionShape2D" parent="Sink/StaticBody2D" index="0"]
-position = Vector2(-38, -10)
-shape = SubResource("RectangleShape2D_dw65u")
+[node name="CollisionCollider" parent="Sink/StaticBody2D" index="0"]
+position = Vector2(-38, -10.5)
+shape = SubResource("RectangleShape2D_3rab4")
 
 [node name="Sprite2D" parent="Sink" index="2"]
 position = Vector2(-38, -8)
@@ -119,13 +79,9 @@ texture = SubResource("AtlasTexture_6ndjj")
 
 [node name="Closet" parent="." instance=ExtResource("5_ohxsq")]
 
-[node name="CollisionShape2D" parent="Closet" index="0"]
-position = Vector2(47.5, 19.5)
-shape = SubResource("RectangleShape2D_gi46r")
-
-[node name="CollisionShape2D" parent="Closet/StaticBody2D" index="0"]
-position = Vector2(48, 19)
-shape = SubResource("RectangleShape2D_ba3ul")
+[node name="CollisionCollider" parent="Closet/StaticBody2D" index="0"]
+position = Vector2(-34, -21)
+shape = SubResource("RectangleShape2D_hsibn")
 
 [node name="Sprite2D" parent="Closet" index="2"]
 position = Vector2(51, 19)

@@ -1,4 +1,4 @@
-extends Room
+extends CustomRoom
 
 @onready var door : Door = $Door
 @onready var room_tiles : RoomTiles = $RoomTiles

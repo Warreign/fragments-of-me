@@ -35,6 +35,7 @@ shadow_offset = Vector2(3, 3)
 script = ExtResource("1_vdfyy")
 
 [node name="DialogPanel" type="PanelContainer" parent="."]
+z_index = 1
 texture_filter = 1
 anchors_preset = 12
 anchor_top = 1.0

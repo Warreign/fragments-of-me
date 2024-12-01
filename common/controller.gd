@@ -37,7 +37,7 @@ func _deferred_goto_scene(scene_name : String, move_player : bool) -> void:
 	
 	if (move_player):
 		current_scene.add_child(player)
-		player.position = (current_scene as Room).last_position
+		player.position = (current_scene as CustomRoom).last_position
 	
 	
 func set_handling_movement(value : bool):
@@ -65,13 +65,14 @@ func toggle_time():
 	if (is_in_menu):
 		return
 	var old_id : int = current_tileset_id
+	var room_tiles : RoomTiles = (current_scene.get_node("RoomTiles") as RoomTiles)
 	if (current_tileset_id == 2):
 		current_tileset_id = 1
+		room_tiles.set_tile_set(preload("res://rooms/past_rooms.tres"))
 	else:
 		current_tileset_id = 2
-	var room_tileset : RoomTiles = (current_scene.get_node("RoomTiles") as RoomTiles)
-	room_tileset.tile_set.set_source_id(old_id, current_tileset_id)
-	room_tileset.notify_runtime_tile_data_update()
+		room_tiles.set_tile_set(preload("res://rooms.tres"))
+	room_tiles.notify_runtime_tile_data_update()
 	
 	
 	

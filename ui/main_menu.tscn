@@ -1,6 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds7x3pyuk3rku"]
+[gd_scene load_steps=6 format=3 uid="uid://ds7x3pyuk3rku"]
 
 [ext_resource type="Script" path="res://ui/main_menu.gd" id="1_gkssb"]
+
+[sub_resource type="Theme" id="Theme_lvl3x"]
+default_font_size = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p3lc1"]
+content_margin_left = 50.0
+content_margin_top = 50.0
+content_margin_right = 50.0
+content_margin_bottom = 50.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="FontFile" id="FontFile_qnl7p"]
 cache/0/16/0/ascent = 0.0
@@ -281,9 +291,6 @@ shadow_size = 10
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(9, 1)
 
-[sub_resource type="Theme" id="Theme_lvl3x"]
-default_font_size = 50
-
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -293,18 +300,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gkssb")
 start_scene = "res://rooms/Bedroom.tscn"
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 135.0
-grow_horizontal = 2
-scale = Vector2(0.996, 0.996)
-text = "Fragments of Me"
-label_settings = SubResource("LabelSettings_5666t")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -329,6 +324,21 @@ text = "Start Game"
 layout_mode = 2
 theme = SubResource("Theme_lvl3x")
 text = "Quit Game"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 135.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p3lc1")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+layout_mode = 2
+text = "Fragments of Me"
+label_settings = SubResource("LabelSettings_5666t")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="start_game"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="quit_game"]

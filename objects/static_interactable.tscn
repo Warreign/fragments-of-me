@@ -6,11 +6,11 @@
 texture_filter = 1
 script = ExtResource("1_get7x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="InteractionCollider" type="CollisionShape2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionCollider" type="CollisionShape2D" parent="StaticBody2D"]
 debug_color = Color(0.181484, 0.186336, 0.226783, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

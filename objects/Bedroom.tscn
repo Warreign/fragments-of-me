@@ -1,15 +1,16 @@
-[gd_scene load_steps=18 format=4 uid="uid://bvaw4aeap28ii"]
+[gd_scene load_steps=19 format=4 uid="uid://s2q4h0aashpw"]
 
-[ext_resource type="TileSet" uid="uid://cmu6ss22756uw" path="res://rooms.tres" id="1_dxj7e"]
-[ext_resource type="Script" path="res://rooms/bedroom.gd" id="2_wypxn"]
-[ext_resource type="PackedScene" uid="uid://cvogxl1ccrhnf" path="res://objects/static_interactable.tscn" id="3_gjkis"]
-[ext_resource type="Script" path="res://rooms/room_tilemap.gd" id="3_hlq27"]
-[ext_resource type="Script" path="res://objects/bed.gd" id="4_0aneo"]
-[ext_resource type="PackedScene" uid="uid://bghbvcto7nwvq" path="res://objects/door.tscn" id="6_6ksv3"]
-[ext_resource type="Texture2D" uid="uid://cnpsg5uqobc2h" path="res://art/bed.tres" id="6_d1nup"]
-[ext_resource type="PackedScene" uid="uid://b4fkn0abcmmcu" path="res://objects/interactable.tscn" id="7_vlhy6"]
-[ext_resource type="Script" path="res://objects/window.gd" id="8_pgfgn"]
-[ext_resource type="Texture2D" uid="uid://lyx3tywyiy4n" path="res://art/items.png" id="10_o6e7c"]
+[ext_resource type="Script" path="res://rooms/bedroom.gd" id="1_jok8m"]
+[ext_resource type="TileSet" uid="uid://cmu6ss22756uw" path="res://rooms.tres" id="2_38jx1"]
+[ext_resource type="Script" path="res://rooms/room_tilemap.gd" id="3_hfkxo"]
+[ext_resource type="PackedScene" uid="uid://cvogxl1ccrhnf" path="res://objects/static_interactable.tscn" id="4_r6mks"]
+[ext_resource type="Script" path="res://objects/bed.gd" id="5_3rc6u"]
+[ext_resource type="Texture2D" uid="uid://cnpsg5uqobc2h" path="res://art/bed.tres" id="6_jqxh1"]
+[ext_resource type="PackedScene" uid="uid://bghbvcto7nwvq" path="res://objects/door.tscn" id="7_5yyqr"]
+[ext_resource type="PackedScene" uid="uid://b4fkn0abcmmcu" path="res://objects/interactable.tscn" id="8_xpkou"]
+[ext_resource type="Script" path="res://objects/window.gd" id="9_g8vs0"]
+[ext_resource type="Texture2D" uid="uid://lyx3tywyiy4n" path="res://art/items.png" id="10_stn73"]
+[ext_resource type="Script" path="res://objects/diary.gd" id="11_0ncnr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hccp4"]
 size = Vector2(45, 21.9999)
@@ -21,33 +22,33 @@ size = Vector2(20, 17)
 size = Vector2(20, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l21du"]
-atlas = ExtResource("10_o6e7c")
+atlas = ExtResource("10_stn73")
 region = Rect2(128, 0, 32, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g8dqo"]
-atlas = ExtResource("10_o6e7c")
+atlas = ExtResource("10_stn73")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ls8o3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6p4dw"]
-atlas = ExtResource("10_o6e7c")
+atlas = ExtResource("10_stn73")
 region = Rect2(48, 16, 16, 16)
 
 [node name="Bedroom" type="Node2D"]
-script = ExtResource("2_wypxn")
+script = ExtResource("1_jok8m")
 
 [node name="RoomTiles" type="TileMapLayer" parent="."]
 texture_filter = 1
 position = Vector2(3, 1)
 tile_map_data = PackedByteArray("AAD9//3/AgABAAIAAAD+//3/AgABAAIAAAD///3/AgABAAIAAAD9//7/AgABAAIAAAD9////AgABAAIAAAD+//7/AgABAAIAAAD+////AgABAAIAAAD/////AgABAAIAAAD///7/AgABAAIAAAAAAP3/AgABAAIAAAABAP3/AgABAAIAAAACAP3/AgABAAIAAAAAAP7/AgABAAIAAAAAAP//AgABAAIAAAAAAAAAAgABAAIAAAAAAAEAAgABAAIAAAD//wEAAgABAAIAAAD+/wAAAgABAAIAAAD+/wEAAgABAAIAAAD//wAAAgABAAIAAAABAAEAAgABAAIAAAABAAAAAgABAAIAAAABAP//AgABAAIAAAABAP7/AgABAAIAAAACAP7/AgABAAIAAAACAP//AgABAAIAAAACAAAAAgABAAIAAAACAAEAAgABAAIAAAD9/wAAAgABAAIAAAD9/wEAAgABAAIAAAACAAIAAgAAAAMAAAD9/wIAAgAAAAMAAAD+/wIAAgAAAAMAAAD//wIAAgAAAAMAAAAAAAIAAgAAAAMAAAABAAIAAgAAAAMAAAD+//z/AgAAAAAAAAD///z/AgABAAEAAAAAAPz/AgABAAEAAAABAPz/AgABAAEAAAD8//3/AgAAAAIAAAD8////AgAAAAIAAAD8/wAAAgAAAAIAAAD8/wEAAgAAAAIAAAD8/wIAAgAAAAMAAAD8//7/AgAAAAIAAAADAAIAAgAAAAMAAAADAAEAAgABAAIAAAADAP7/AgABAAIAAAADAP//AgABAAIAAAADAAAAAgABAAIAAAADAP3/AgABAAIAAAAEAP3/AgACAAIAAAAEAP7/AgACAAIAAAAEAAAAAgACAAIAAAAEAAEAAgACAAIAAAAEAAIAAgAAAAMAAAD8//z/AgAAAAEAAAAEAPz/AgACAAEAAAADAPz/AgABAAEAAAACAPz/AgABAAAAAAD9//z/AgABAAEAAAAEAP//AgACAAAAAAA=")
-tile_set = ExtResource("1_dxj7e")
-script = ExtResource("3_hlq27")
+tile_set = ExtResource("2_38jx1")
+script = ExtResource("3_hfkxo")
 
-[node name="Bed" parent="." instance=ExtResource("3_gjkis")]
+[node name="Bed" parent="." instance=ExtResource("4_r6mks")]
 position = Vector2(-6, -18)
 rotation = -3.14159
-script = ExtResource("4_0aneo")
+script = ExtResource("5_3rc6u")
 
 [node name="CollisionCollider" parent="Bed/StaticBody2D" index="0"]
 position = Vector2(23.4999, -41)
@@ -57,14 +58,14 @@ shape = SubResource("RectangleShape2D_hccp4")
 position = Vector2(20.9999, -36.0001)
 rotation = 1.57079
 scale = Vector2(1.28911, 1.28911)
-texture = ExtResource("6_d1nup")
+texture = ExtResource("6_jqxh1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(16, -7)
 scale = Vector2(1, 1.02021)
 zoom = Vector2(4.5, 4.5)
 
-[node name="Door" parent="." instance=ExtResource("6_6ksv3")]
+[node name="Door" parent="." instance=ExtResource("7_5yyqr")]
 position = Vector2(70, -7)
 atlas_pos_opened = Vector2i(2, 0)
 atlas_pos_closed = Vector2i(3, 0)
@@ -72,9 +73,9 @@ door_tile_pos = Vector2i(4, -1)
 is_locked = false
 scene = "res://rooms/corridor.tscn"
 
-[node name="Window" parent="." instance=ExtResource("7_vlhy6")]
+[node name="Window" parent="." instance=ExtResource("8_xpkou")]
 position = Vector2(3, 1)
-script = ExtResource("8_pgfgn")
+script = ExtResource("9_g8vs0")
 
 [node name="CollisionShape2D" parent="Window" index="0"]
 position = Vector2(-24, -49.5)
@@ -84,7 +85,7 @@ shape = SubResource("RectangleShape2D_a7fu4")
 position = Vector2(40, -50)
 shape = SubResource("RectangleShape2D_nmt07")
 
-[node name="Table" parent="." instance=ExtResource("3_gjkis")]
+[node name="Table" parent="." instance=ExtResource("4_r6mks")]
 position = Vector2(1, -8)
 
 [node name="InteractionCollider" parent="Table" index="0"]
@@ -99,13 +100,13 @@ position = Vector2(10, -38)
 scale = Vector2(0.75, 0.75)
 texture = SubResource("AtlasTexture_g8dqo")
 
-[node name="asdasd" parent="." instance=ExtResource("3_gjkis")]
+[node name="asdasd" parent="." instance=ExtResource("4_r6mks")]
 position = Vector2(0, 3)
 
-[node name="Diary" parent="." instance=ExtResource("3_gjkis")]
+[node name="Diary" parent="." instance=ExtResource("4_r6mks")]
 position = Vector2(50, 21)
 rotation = -2.59955
-script = null
+script = ExtResource("11_0ncnr")
 
 [node name="InteractionCollider" parent="Diary" index="0"]
 shape = SubResource("CircleShape2D_ls8o3")

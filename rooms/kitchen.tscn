@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dxgchr51ftc0v"]
+[gd_scene load_steps=15 format=4 uid="uid://dxgchr51ftc0v"]
 
 [ext_resource type="Script" path="res://rooms/bedroom.gd" id="1_3k8dq"]
 [ext_resource type="TileSet" uid="uid://cmu6ss22756uw" path="res://rooms.tres" id="2_o4w6x"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://objects/hole.gd" id="5_rp4mm"]
 [ext_resource type="PackedScene" uid="uid://cvogxl1ccrhnf" path="res://objects/static_interactable.tscn" id="6_ljeav"]
 [ext_resource type="Texture2D" uid="uid://lyx3tywyiy4n" path="res://art/items.png" id="7_2lgjm"]
+[ext_resource type="Script" path="res://objects/note3.gd" id="8_gkax1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oiarg"]
 size = Vector2(35.9883, 20)
@@ -68,7 +69,6 @@ scale = Vector2(1.88736, 1.14414)
 [node name="CollisionCollider" parent="Table/StaticBody2D" index="0"]
 position = Vector2(1.02481, 0.0261052)
 rotation = 0.0254677
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_oiarg")
 
 [node name="Sprite2D" parent="Table" index="2"]
@@ -76,6 +76,7 @@ texture = SubResource("AtlasTexture_oi7pb")
 
 [node name="Note3" parent="." instance=ExtResource("6_ljeav")]
 position = Vector2(0, -15)
+script = ExtResource("8_gkax1")
 
 [node name="InteractionCollider" parent="Note3" index="0"]
 position = Vector2(-6, -8)

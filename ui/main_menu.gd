@@ -3,8 +3,10 @@ extends Control
 @export_file("*.tscn") var start_scene
 
 func start_game():
-	assert(start_scene)
-	Controller.goto_scene(start_scene)
+	Controller.start_game()
+
+func quit_game():
+	Controller.quit_game()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

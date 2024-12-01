@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=4 uid="uid://bv2n20ue4svmk"]
+
+[ext_resource type="Script" path="res://rooms/bedroom.gd" id="1_3k8dq"]
+[ext_resource type="TileSet" uid="uid://cmu6ss22756uw" path="res://rooms.tres" id="2_o4w6x"]
+[ext_resource type="Script" path="res://rooms/room_tilemap.gd" id="3_63ndy"]
+[ext_resource type="PackedScene" uid="uid://bghbvcto7nwvq" path="res://objects/door.tscn" id="4_wrf2b"]
+[ext_resource type="Script" path="res://objects/hole.gd" id="5_rp4mm"]
+
+[node name="LivingRoom" type="Node2D"]
+script = ExtResource("1_3k8dq")
+
+[node name="RoomTiles" type="TileMapLayer" parent="."]
+texture_filter = 1
+position = Vector2(3, 1)
+tile_map_data = PackedByteArray("AAD9//3/AgABAAIAAAD+//3/AgABAAIAAAD///3/AgABAAIAAAD9//7/AgABAAIAAAD9////AgABAAIAAAD+//7/AgABAAIAAAD+////AgABAAIAAAD/////AgABAAIAAAD///7/AgABAAIAAAAAAP3/AgABAAIAAAABAP3/AgABAAIAAAACAP3/AgABAAIAAAAAAP7/AgABAAIAAAAAAP//AgABAAIAAAAAAAAAAgABAAIAAAAAAAEAAgABAAIAAAD//wEAAgABAAIAAAD+/wAAAgABAAIAAAD+/wEAAgABAAIAAAD//wAAAgABAAIAAAABAAEAAgABAAIAAAABAAAAAgABAAIAAAABAP//AgABAAIAAAABAP7/AgABAAIAAAACAP7/AgABAAIAAAACAP//AgABAAIAAAACAAAAAgABAAIAAAACAAEAAgABAAIAAAD9/wAAAgABAAIAAAD9/wEAAgABAAIAAAACAAIAAgAAAAMAAAD9/wIAAgAAAAMAAAD+/wIAAgAAAAMAAAD//wIAAgAAAAMAAAAAAAIAAgAAAAMAAAABAAIAAgAAAAMAAAD+//z/AgAEAAQAAAD///z/AgAEAAQAAAAAAPz/AgAEAAQAAAABAPz/AgAEAAQAAAD8//3/AgADAAUAAAD8////AgAIAAAAAAD8/wAAAgADAAUAAAD8/wEAAgADAAUAAAD8/wIAAgAAAAMAAAD8//7/AgADAAUAAAADAAIAAgAAAAMAAAADAAEAAgABAAIAAAADAP7/AgABAAIAAAADAP//AgABAAIAAAADAAAAAgABAAIAAAADAP3/AgABAAIAAAAEAP3/AgAFAAUAAAAEAP7/AgAFAAUAAAAEAAAAAgAFAAUAAAAEAAEAAgAFAAUAAAAEAAIAAgAAAAMAAAD8//z/AgADAAQAAAAEAPz/AgAFAAQAAAADAPz/AgAEAAQAAAACAPz/AgAGAAYAAAD9//z/AgAEAAQAAAAEAP//AgAFAAUAAAA=")
+tile_set = ExtResource("2_o4w6x")
+script = ExtResource("3_63ndy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(16, -7)
+scale = Vector2(1, 1.02021)
+zoom = Vector2(4.5, 4.5)
+
+[node name="Door" parent="." instance=ExtResource("4_wrf2b")]
+position = Vector2(-52, -6)
+scale = Vector2(0.876226, 0.770612)
+atlas_pos_opened = Vector2i(9, 0)
+atlas_pos_closed = Vector2i(8, 0)
+door_tile_pos = Vector2i(-4, -1)
+scene = "res://rooms/corridor.tscn"
+
+[node name="Hole" parent="." instance=ExtResource("4_wrf2b")]
+position = Vector2(44, -50)
+scale = Vector2(0.876226, 0.770612)
+script = ExtResource("5_rp4mm")
+atlas_pos_opened = Vector2i(6, 6)
+atlas_pos_closed = Vector2i(4, 4)
+door_tile_pos = Vector2i(2, -4)
+is_locked = false
+scene = "res://rooms/living_room.tscn"

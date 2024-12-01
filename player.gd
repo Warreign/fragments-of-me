@@ -37,6 +37,11 @@ func _process(delta):
 			var door : Door = (current_interactable as Door)
 			if (door):
 				door.is_locked = !door.is_locked
+				
+		if (Input.is_action_just_pressed("toggle_time")):
+			Controller.toggle_time()
+			
+			
 
 func _get_inputs():
 	if (!Controller.is_handling_movement()):

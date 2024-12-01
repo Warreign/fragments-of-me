@@ -8,6 +8,8 @@ var current_scene : Node = null
 
 var _is_handling_movement : bool = true
 
+var current_tileset_id : int = 2 
+
 @export var player : Player
 
 func _ready():
@@ -58,4 +60,19 @@ func quit_game():
 	
 func goto_main_menu():
 	goto_scene(menu_scene, false)
+	
+func toggle_time():
+	if (is_in_menu):
+		return
+	var old_id : int = current_tileset_id
+	if (current_tileset_id == 2):
+		current_tileset_id = 1
+	else:
+		current_tileset_id = 2
+	var room_tileset : RoomTiles = (current_scene.get_node("RoomTiles") as RoomTiles)
+	room_tileset.tile_set.set_source_id(old_id, current_tileset_id)
+	room_tileset.notify_runtime_tile_data_update()
+	
+	
+	
 	

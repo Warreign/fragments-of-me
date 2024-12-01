@@ -31,6 +31,7 @@ func show_dialog_panel(text : String):
 
 func hide_dialog_panel():
 	is_dialog_shown = false
+	is_animating = false
 	dialog_panel.hide()
 	Controller.set_handling_movement(true)
 
@@ -50,7 +51,7 @@ func update_text_animation():
 	
 func skip_text_animation():
 	is_animating = false
-	percent_shown = 1
+	percent_shown = 1.1
 	dialog_text.set_visible_ratio(1)
 
 # Called when the node enters the scene tree for the first time.
@@ -94,5 +95,6 @@ func unpause_game():
 	
 func main_menu():
 	unpause_game()
+	hide_dialog_panel()
 	Controller.goto_main_menu()
 	

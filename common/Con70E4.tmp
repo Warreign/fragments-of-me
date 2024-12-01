@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgbskh2ftstge"]
+
+[ext_resource type="Script" path="res://common/controller.gd" id="1_vfxkw"]
+
+[node name="Controller" type="Node2D"]
+script = ExtResource("1_vfxkw")
+menu_scene = "res://ui/main_menu.tscn"
+start_scene = "res://rooms/bedroom.tscn"

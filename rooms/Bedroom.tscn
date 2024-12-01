@@ -5,16 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://cvogxl1ccrhnf" path="res://objects/static_interactable.tscn" id="3_gjkis"]
 [ext_resource type="Script" path="res://rooms/room_tilemap.gd" id="3_hlq27"]
 [ext_resource type="Script" path="res://objects/bed.gd" id="4_0aneo"]
-[ext_resource type="Texture2D" uid="uid://dbw3fv6im6aek" path="res://art/Bed.png" id="5_bypre"]
 [ext_resource type="PackedScene" uid="uid://bghbvcto7nwvq" path="res://objects/door.tscn" id="6_6ksv3"]
+[ext_resource type="Texture2D" uid="uid://cnpsg5uqobc2h" path="res://art/bed.tres" id="6_d1nup"]
 [ext_resource type="PackedScene" uid="uid://b4fkn0abcmmcu" path="res://objects/interactable.tscn" id="7_vlhy6"]
 [ext_resource type="Script" path="res://objects/window.gd" id="8_pgfgn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tjgnb"]
-size = Vector2(44, 26)
+size = Vector2(50, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3egva"]
-size = Vector2(30, 16.9999)
+size = Vector2(42, 23.9999)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a7fu4"]
 size = Vector2(20, 17)
@@ -33,22 +33,23 @@ tile_set = ExtResource("1_dxj7e")
 script = ExtResource("3_hlq27")
 
 [node name="Bed" parent="." instance=ExtResource("3_gjkis")]
-position = Vector2(-13, -19)
+position = Vector2(-6, -18)
 rotation = -3.14159
 script = ExtResource("4_0aneo")
 
 [node name="CollisionShape2D" parent="Bed" index="0"]
-position = Vector2(21, -36)
+position = Vector2(20, -33.5)
 shape = SubResource("RectangleShape2D_tjgnb")
 
 [node name="CollisionShape2D" parent="Bed/StaticBody2D" index="0"]
-position = Vector2(22, -34.5)
+position = Vector2(20.9999, -35.0001)
 shape = SubResource("RectangleShape2D_3egva")
 
 [node name="Sprite2D" parent="Bed" index="2"]
-position = Vector2(22, -36)
-scale = Vector2(0.32, 0.32)
-texture = ExtResource("5_bypre")
+position = Vector2(20.9999, -36.0001)
+rotation = 1.57079
+scale = Vector2(1.28911, 1.28911)
+texture = ExtResource("6_d1nup")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(16, -7)

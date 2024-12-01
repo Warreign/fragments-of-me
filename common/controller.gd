@@ -1,5 +1,7 @@
 extends Node2D
 
+signal time_changed(past : bool)
+
 @export_file("*.tscn") var menu_scene
 var is_in_menu : bool = true
 
@@ -73,7 +75,7 @@ func toggle_time():
 		current_tileset_id = 2
 		room_tiles.set_tile_set(preload("res://rooms.tres"))
 	room_tiles.notify_runtime_tile_data_update()
-	
+	time_changed.emit(current_tileset_id == 1)
 	
 	
 	

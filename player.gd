@@ -29,7 +29,7 @@ func _process(delta):
 	if (Controller.is_handling_movement()):
 		if (Input.is_action_just_pressed("primary_action")):
 			if (current_interactable):
-				current_interactable._on_interact()
+				current_interactable._on_interact_final()
 			else:
 				print("Not interactable")
 				
@@ -82,7 +82,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func _on_interactable_enter(interactable_area : Area2D):
-	Hud.set_action_label(interactable_area.get_action_text())
+	Hud.set_action_label(interactable_area.get_action_text_final())
 	current_interactable = interactable_area
 	
 func _on_interactable_exit(interactable_area : Area2D):

@@ -2,16 +2,16 @@ extends CustomRoom
 
 @onready var door : Door = $Door
 @onready var room_tiles : RoomTiles = $RoomTiles
-
-func toggle_door():
-	if (door.is_locked):
-		door.is_locked = false
-		$NormalTilesOpenDoor.show()
-		$NormalTiles.hide()
-	else:
-		door.is_locked = true
-		$NormalTiles.show()
-		$NormalTilesOpenDoor.hide()
+#
+#func toggle_door():
+	#if (door.is_locked):
+		#door.is_locked = false
+		#$NormalTilesOpenDoor.show()
+		#$NormalTiles.hide()
+	#else:
+		#door.is_locked = true
+		#$NormalTiles.show()
+		#$NormalTilesOpenDoor.hide()
 		
 
 func get_room_tilemap() -> RoomTiles:

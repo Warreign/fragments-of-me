@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=4 uid="uid://clnsfllxelvea"]
+
+[ext_resource type="Texture2D" uid="uid://cpi4upagav7u0" path="res://art/grass.png" id="1_bpcrn"]
+[ext_resource type="Script" path="res://rooms/outside.gd" id="2_4w32b"]
+[ext_resource type="Texture2D" uid="uid://bs21gia6wcimb" path="res://art/player/front1.png" id="2_36s2k"]
+[ext_resource type="Texture2D" uid="uid://dbnpviw2h3gts" path="res://art/player/front2.png" id="3_x7ri5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6fam2"]
+texture = ExtResource("1_bpcrn")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_a2w3d"]
+sources/0 = SubResource("TileSetAtlasSource_6fam2")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lb352"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_36s2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x7ri5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MenuBackground" type="TileMapLayer"]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD9//3/AAABAAAAAAD9//7/AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wIAAAABAAAAAAD+//3/AAABAAAAAAD+/wAAAAABAAAAAAD/////AAACAAAAAAD//wEAAAACAAAAAAAAAP7/AAABAAAAAAAAAP//AAACAAAAAAACAP3/AAAAAAAAAAADAAEAAAACAAAAAAD+/wEAAAABAAAAAAAAAP3/AAACAAAAAAABAP3/AAAAAAAAAAABAP7/AAACAAAAAAABAAAAAAACAAAAAAADAP3/AAABAAAAAAADAP//AAABAAAAAAADAAIAAAACAAAAAAD+////AAACAAAAAAD+/wIAAAABAAAAAAD//wAAAAAAAAAAAAD//wIAAAABAAAAAAAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAAADAP7/AAACAAAAAAD9////AAABAAAAAAD9/wEAAAACAAAAAAD+//7/AAABAAAAAAD///3/AAAAAAAAAAD///7/AAACAAAAAAAAAAIAAAAAAAAAAAABAP//AAAAAAAAAAABAAEAAAABAAAAAAABAAIAAAAAAAAAAAACAP7/AAABAAAAAAACAP//AAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAACAAAAAAACAAIAAAACAAAAAAADAAAAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_a2w3d")
+script = ExtResource("2_4w32b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, 20)
+sprite_frames = SubResource("SpriteFrames_lb352")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(10, 10)

@@ -15,8 +15,8 @@ var current_tileset_id : int = 2
 @export var player : Player
 
 func _ready():
-	current_scene = get_tree().root.get_node("MainMenu")
-	assert(current_scene)
+	current_scene = get_tree().root.get_node("Menu")
+	#assert(current_scene)
 	pass
 	
 func goto_scene(scene_name : String, move_player :bool = true) -> void:

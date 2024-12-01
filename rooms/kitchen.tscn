@@ -9,27 +9,28 @@
 [ext_resource type="Texture2D" uid="uid://lyx3tywyiy4n" path="res://art/items.png" id="7_2lgjm"]
 [ext_resource type="Script" path="res://objects/note3.gd" id="8_gkax1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oiarg"]
-size = Vector2(35.9883, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fmqq"]
+size = Vector2(31.7904, 16.1181)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oi7pb"]
 atlas = ExtResource("7_2lgjm")
 region = Rect2(128, 0, 32, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_guqpm"]
+radius = 12.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otgid"]
 atlas = ExtResource("7_2lgjm")
 region = Rect2(144, 32, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ew5o2"]
-size = Vector2(19.1477, 20)
+size = Vector2(18.0666, 15.9999)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sbxnb"]
 atlas = ExtResource("7_2lgjm")
 region = Rect2(0, 32, 80, 16)
 
-[node name="LivingRoom" type="Node2D"]
+[node name="LivingRoom2" type="Node2D"]
 script = ExtResource("1_3k8dq")
 
 [node name="RoomTiles" type="TileMapLayer" parent="."]
@@ -52,6 +53,10 @@ atlas_pos_closed = Vector2i(8, 0)
 door_tile_pos = Vector2i(-4, -1)
 scene = "res://rooms/corridor.tscn"
 
+[node name="CollisionShape2D" parent="Door" index="0"]
+position = Vector2(0.570629, -0.648836)
+scale = Vector2(1, 1)
+
 [node name="Hole" parent="." instance=ExtResource("4_wrf2b")]
 position = Vector2(44, -50)
 scale = Vector2(0.876226, 0.770612)
@@ -67,9 +72,9 @@ position = Vector2(22, -12)
 scale = Vector2(1.88736, 1.14414)
 
 [node name="CollisionCollider" parent="Table/StaticBody2D" index="0"]
-position = Vector2(1.02481, 0.0261052)
-rotation = 0.0254677
-shape = SubResource("RectangleShape2D_oiarg")
+position = Vector2(1.05968, 0.192898)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_7fmqq")
 
 [node name="Sprite2D" parent="Table" index="2"]
 texture = SubResource("AtlasTexture_oi7pb")
@@ -79,7 +84,8 @@ position = Vector2(0, -15)
 script = ExtResource("8_gkax1")
 
 [node name="InteractionCollider" parent="Note3" index="0"]
-position = Vector2(-6, -8)
+position = Vector2(1, 0)
+rotation = 0.0447951
 shape = SubResource("CircleShape2D_guqpm")
 
 [node name="Sprite2D" parent="Note3" index="2"]
@@ -90,13 +96,14 @@ position = Vector2(-11, 25)
 rotation = -3.14159
 
 [node name="CollisionCollider" parent="KitchenTable/StaticBody2D" index="0"]
-position = Vector2(1.86353, 0)
+position = Vector2(0.500009, -4.57764e-05)
 scale = Vector2(4.37271, 1)
 shape = SubResource("RectangleShape2D_ew5o2")
 
 [node name="Sprite2D" parent="KitchenTable" index="2"]
 texture = SubResource("AtlasTexture_sbxnb")
 
+[editable path="Door"]
 [editable path="Table"]
 [editable path="Note3"]
 [editable path="KitchenTable"]

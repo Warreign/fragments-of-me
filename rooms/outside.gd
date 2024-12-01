@@ -1,15 +1,9 @@
-extends CanvasLayer
+extends TileMapLayer
 
-@export_file("*.tscn") var start_scene
-
-func start_game():
-	Controller.start_game()
-
-func quit_game():
-	Controller.quit_game()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$AnimatedSprite2D.play()
 	pass # Replace with function body.
 
 

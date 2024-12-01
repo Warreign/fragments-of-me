@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ds7x3pyuk3rku"]
+[gd_scene load_steps=7 format=4 uid="uid://ds7x3pyuk3rku"]
 
 [ext_resource type="Script" path="res://ui/main_menu.gd" id="1_gkssb"]
+[ext_resource type="PackedScene" uid="uid://clnsfllxelvea" path="res://rooms/outside.tscn" id="2_n3eap"]
 
 [sub_resource type="Theme" id="Theme_lvl3x"]
 default_font_size = 50
@@ -291,18 +292,19 @@ shadow_size = 10
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(9, 1)
 
-[node name="MainMenu" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Menu" type="Node2D"]
+
+[node name="MenuBackground" parent="." instance=ExtResource("2_n3eap")]
+tile_map_data = PackedByteArray("AAD9//3/AAABAAAAAAD9//7/AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wIAAAABAAAAAAD+//3/AAABAAAAAAD+/wAAAAABAAAAAAD/////AAACAAAAAAD//wEAAAACAAAAAAAAAP7/AAABAAAAAAAAAP//AAACAAAAAAACAP3/AAAAAAAAAAADAAEAAAACAAAAAAD+/wEAAAABAAAAAAAAAP3/AAACAAAAAAABAP3/AAAAAAAAAAABAP7/AAACAAAAAAABAAAAAAACAAAAAAADAP3/AAABAAAAAAADAP//AAABAAAAAAADAAIAAAACAAAAAAD+////AAACAAAAAAD+/wIAAAABAAAAAAD//wAAAAAAAAAAAAD//wIAAAABAAAAAAAAAAAAAAABAAAAAAAAAAEAAAAAAAAAAAADAP7/AAACAAAAAAD9////AAABAAAAAAD9/wEAAAACAAAAAAD+//7/AAABAAAAAAD///3/AAAAAAAAAAD///7/AAACAAAAAAAAAAIAAAAAAAAAAAABAP//AAAAAAAAAAABAAEAAAABAAAAAAABAAIAAAAAAAAAAAACAP7/AAABAAAAAAACAP//AAAAAAAAAAACAAAAAAAAAAAAAAACAAEAAAACAAAAAAACAAIAAAACAAAAAAADAAAAAAABAAAAAAD8//3/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAACAAAAAAD8/wAAAAABAAAAAAD8/wEAAAABAAAAAAD8/wIAAAABAAAAAAA=")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(10, 10)
+
+[node name="MainMenu" type="CanvasLayer" parent="."]
 script = ExtResource("1_gkssb")
 start_scene = "res://rooms/Bedroom.tscn"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -315,30 +317,29 @@ offset_bottom = 79.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
+[node name="StartButton" type="Button" parent="MainMenu/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_lvl3x")
 text = "Start Game"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
+[node name="QuitButton" type="Button" parent="MainMenu/VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_lvl3x")
 text = "Quit Game"
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 1
+[node name="PanelContainer" type="PanelContainer" parent="MainMenu"]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 135.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_p3lc1")
 
-[node name="Label" type="Label" parent="PanelContainer"]
+[node name="Label" type="Label" parent="MainMenu/PanelContainer"]
 layout_mode = 2
 text = "Fragments of Me"
 label_settings = SubResource("LabelSettings_5666t")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="start_game"]
-[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="quit_game"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/StartButton" to="MainMenu" method="start_game"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/QuitButton" to="MainMenu" method="quit_game"]

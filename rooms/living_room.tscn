@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://lyx3tywyiy4n" path="res://art/items.png" id="7_tfalp"]
 [ext_resource type="Script" path="res://objects/note2.gd" id="8_yjhmg"]
 [ext_resource type="Script" path="res://objects/note.gd" id="9_s7hbr"]
+[ext_resource type="Script" path="res://objects/lighter.gd" id="8_4uo1c"]
+[ext_resource type="Script" path="res://objects/tnt.gd" id="9_6ittu"]
+[ext_resource type="Script" path="res://objects/safe.gd" id="9_p4fl5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkbd2"]
 size = Vector2(48, 16)
@@ -120,6 +123,8 @@ texture = SubResource("AtlasTexture_5wp31")
 
 [node name="Fire" parent="." instance=ExtResource("6_2lyar")]
 position = Vector2(24, -17)
+script = ExtResource("8_4uo1c")
+is_interactable_once = true
 
 [node name="InteractionCollider" parent="Fire" index="0"]
 position = Vector2(-3, 3)
@@ -131,6 +136,7 @@ texture = SubResource("AtlasTexture_kngn2")
 
 [node name="Safe" parent="." instance=ExtResource("6_2lyar")]
 position = Vector2(65, 24)
+script = ExtResource("9_p4fl5")
 
 [node name="InteractionCollider" parent="Safe" index="0"]
 position = Vector2(-1, -2)
@@ -146,6 +152,8 @@ texture = SubResource("AtlasTexture_3fafc")
 [node name="TNT" parent="." instance=ExtResource("6_2lyar")]
 position = Vector2(-43, -42)
 rotation = -2.45803
+script = ExtResource("9_6ittu")
+is_interactable_once = true
 
 [node name="InteractionCollider" parent="TNT" index="0"]
 position = Vector2(-0.631559, -0.775328)

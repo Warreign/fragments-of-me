@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgbskh2ftstge"]
+[gd_scene load_steps=2 format=3 uid="uid://cgbskh2ftstge"]
 
 [ext_resource type="Script" path="res://common/controller.gd" id="1_vfxkw"]
-[ext_resource type="PackedScene" uid="uid://dyn73dg3o7nlh" path="res://Player.tscn" id="2_b211k"]
 
 [node name="Controller" type="Node2D"]
 script = ExtResource("1_vfxkw")
-
-[node name="Player" parent="." instance=ExtResource("2_b211k")]

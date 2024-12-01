@@ -157,6 +157,9 @@ shape = SubResource("CircleShape2D_ls8o3")
 [node name="Sprite2D" parent="Diary" index="2"]
 texture = SubResource("AtlasTexture_6p4dw")
 
+[node name="InitialPosition" type="Node2D" parent="."]
+position = Vector2(16, 19)
+
 [editable path="Bed"]
 [editable path="Window"]
 [editable path="Table"]

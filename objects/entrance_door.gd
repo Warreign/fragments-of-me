@@ -3,7 +3,7 @@ extends Door
 func _on_interact():
 	if (is_locked):
 		if (Controller.picked_up_crowbar):
-			Hud.show_dialog_panel("I'm finally out")
+			Hud.show_dialog_panel("I'm finally out!")
 			is_locked = false
 		else:
 			Hud.show_dialog_panel("Oh no, who did this??? I have to find a way out!")

@@ -14,4 +14,4 @@ func _ready():
 			$RoomTiles.set_tile_set(preload("res://rooms/past_rooms.tres"))
 		else:
 			$RoomTiles.set_tile_set(preload("res://rooms.tres"))
-	last_position = $LastPosition.position
+	last_position = $InitialPosition.position

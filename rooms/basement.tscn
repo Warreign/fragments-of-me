@@ -33,7 +33,7 @@ position = Vector2(8, -40)
 scale = Vector2(0.879728, 1.42524)
 zoom = Vector2(4.5, 4.5)
 
-[node name="LastPosition" type="Node2D" parent="."]
+[node name="InitialPosition" type="Node2D" parent="."]
 position = Vector2(8, -53)
 
 [node name="Door" parent="." instance=ExtResource("8_tdrnk")]

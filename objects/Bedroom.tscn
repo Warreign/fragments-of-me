@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://s2q4h0aashpw"]
+[gd_scene load_steps=19 format=4 uid="uid://w6qvq2wspbs2"]
 
 [ext_resource type="Script" path="res://rooms/bedroom.gd" id="1_jok8m"]
 [ext_resource type="TileSet" uid="uid://cmu6ss22756uw" path="res://rooms.tres" id="2_38jx1"]
@@ -113,6 +113,9 @@ shape = SubResource("CircleShape2D_ls8o3")
 
 [node name="Sprite2D" parent="Diary" index="2"]
 texture = SubResource("AtlasTexture_6p4dw")
+
+[node name="InitialPosition" type="Node2D" parent="."]
+position = Vector2(10, 15)
 
 [editable path="Bed"]
 [editable path="Window"]

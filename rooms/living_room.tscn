@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://wt20hvqki72q"]
+[gd_scene load_steps=29 format=4 uid="uid://wt20hvqki72q"]
 
 [ext_resource type="Script" path="res://rooms/bedroom.gd" id="1_8go0i"]
 [ext_resource type="TileSet" uid="uid://cmu6ss22756uw" path="res://rooms.tres" id="2_8gg2e"]
@@ -33,6 +33,10 @@ radius = 8.0
 [sub_resource type="AtlasTexture" id="AtlasTexture_kngn2"]
 atlas = ExtResource("7_tfalp")
 region = Rect2(64, 16, 16, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phyff"]
+atlas = ExtResource("7_tfalp")
+region = Rect2(128, 48, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cpp80"]
 
@@ -136,6 +140,7 @@ texture = SubResource("AtlasTexture_kngn2")
 [node name="Safe" parent="." instance=ExtResource("6_2lyar")]
 position = Vector2(65, 24)
 script = ExtResource("9_p4fl5")
+open_safe_texture = SubResource("AtlasTexture_phyff")
 
 [node name="InteractionCollider" parent="Safe" index="0"]
 position = Vector2(-1, -2)
@@ -162,7 +167,10 @@ shape = SubResource("CircleShape2D_e0t7r")
 texture = SubResource("AtlasTexture_q0o7i")
 
 [node name="Note1" parent="." instance=ExtResource("6_2lyar")]
-position = Vector2(-21, -5)
+visible = false
+position = Vector2(57, -11)
+monitoring = false
+monitorable = false
 script = ExtResource("8_yjhmg")
 is_interactable_once = true
 
@@ -175,7 +183,7 @@ position = Vector2(2, 0)
 texture = SubResource("AtlasTexture_vugdh")
 
 [node name="Note2" parent="." instance=ExtResource("6_2lyar")]
-position = Vector2(2, 27)
+position = Vector2(-26, 23)
 script = ExtResource("9_s7hbr")
 is_interactable_once = true
 
@@ -184,6 +192,9 @@ shape = SubResource("CircleShape2D_qokmx")
 
 [node name="Sprite2D" parent="Note2" index="2"]
 texture = SubResource("AtlasTexture_u43fs")
+
+[node name="InitialPosition" type="Node2D" parent="."]
+position = Vector2(-36, -6)
 
 [editable path="Hole"]
 [editable path="Sofa"]

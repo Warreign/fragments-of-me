@@ -9,7 +9,6 @@ func _ready() -> void:
 func _on_interact():
 	#print("Action not implemented")
 	$Sprite2D.hide()
-	Hud.show_dialog_panel("Lately, I’ve been feeling more angry for no reason, and I’ve started remembering things that didn’t happen. Conversations, places—things that don’t make sense. It’s getting worse. I need to call the doctor tomorrow. Something’s wrong.")
 	
 func get_action_text() -> String:
 	return "Press 'Space' to pick up a note fragment"

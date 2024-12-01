@@ -1,6 +1,8 @@
 class_name CustomRoom
 extends Node2D
 
+var scene_file : String
+
 @export var last_position : Vector2
 
 func get_room_tilemap():

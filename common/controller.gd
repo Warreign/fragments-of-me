@@ -2,6 +2,8 @@ extends Node2D
 
 signal time_changed(past : bool)
 
+var scene_positions : Dictionary = {}
+
 var picked_up_crowbar : bool = false
 
 @export_file("*.tscn") var menu_scene
@@ -26,22 +28,28 @@ func goto_scene(scene_name : String, move_player :bool = true) -> void:
 	
 func _deferred_goto_scene(scene_name : String, move_player : bool) -> void:
 	if (move_player):
+		
 		is_in_menu = false
 	else:
 		is_in_menu = true
 	
 	if (current_scene):
 		if (move_player and current_scene.get_children().has(player)):
+			scene_positions[current_scene.scene_file_path] = player.position
 			current_scene.remove_child(player)
 		get_tree().root.remove_child(current_scene);
 		current_scene.free();
 	var s = ResourceLoader.load(scene_name)
 	current_scene = s.instantiate()
+	current_scene.scene_file_path
 	get_tree().root.add_child(current_scene);
 	
 	if (move_player):
 		current_scene.add_child(player)
-		player.position = (current_scene as CustomRoom).last_position
+		if (scene_positions.has(current_scene.scene_file_path)):
+			player.position = scene_positions[current_scene.scene_file_path]
+		else:
+			player.position = (current_scene as CustomRoom).last_position
 	
 	
 func set_handling_movement(value : bool):

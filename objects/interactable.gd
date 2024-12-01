@@ -15,13 +15,13 @@ func _on_interact_final():
 	_on_interact()
 	was_interacted = true
 
-func _on_interact():
-	print("Action not implemented")
-
 func get_action_text_final():
 	if (is_interactable_once and was_interacted):
 		return ""
 	return get_action_text()
+
+func _on_interact():
+	print("Action not implemented")
 	
 func get_action_text() -> String:
 	return "Action not implemented"

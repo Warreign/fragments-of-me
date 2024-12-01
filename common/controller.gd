@@ -63,6 +63,7 @@ func quit_game():
 func goto_main_menu():
 	goto_scene(menu_scene, false)
 	
+	
 func toggle_time():
 	if (is_in_menu):
 		return

@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://jio3qc8x4qlk"]
+
+[ext_resource type="Script" path="res://rooms/Rooms.gd" id="1_iahsx"]
+[ext_resource type="PackedScene" uid="uid://bvaw4aeap28ii" path="res://rooms/bedroom.tscn" id="2_3gd35"]
+[ext_resource type="PackedScene" uid="uid://dl7kckjinvwur" path="res://rooms/bathroom.tscn" id="3_h0rq7"]
+[ext_resource type="PackedScene" uid="uid://dlmqo67wybin7" path="res://rooms/basement.tscn" id="4_o7pg2"]
+[ext_resource type="PackedScene" uid="uid://wt20hvqki72q" path="res://rooms/living_room.tscn" id="5_17stt"]
+[ext_resource type="PackedScene" uid="uid://dxgchr51ftc0v" path="res://rooms/kitchen.tscn" id="6_f2ply"]
+[ext_resource type="PackedScene" uid="uid://cx67a726vp1kv" path="res://rooms/corridor.tscn" id="7_gh5qq"]
+
+[node name="Rooms" type="Node2D"]
+script = ExtResource("1_iahsx")
+
+[node name="Bedroom" parent="." instance=ExtResource("2_3gd35")]
+position = Vector2(-383, -80)
+
+[node name="Bathroom" parent="." instance=ExtResource("3_h0rq7")]
+position = Vector2(-373, -234)
+
+[node name="Basement" parent="." instance=ExtResource("4_o7pg2")]
+position = Vector2(-126, -206)
+
+[node name="LivingRoom" parent="." instance=ExtResource("5_17stt")]
+position = Vector2(134, -240)
+
+[node name="Kitchen" parent="." instance=ExtResource("6_f2ply")]
+position = Vector2(-123, -79)
+
+[node name="Corridor" parent="." instance=ExtResource("7_gh5qq")]
+position = Vector2(144, -46)
+
+[editable path="Bedroom"]
+[editable path="Bedroom/Bed"]
+[editable path="Bedroom/Window"]
+[editable path="Bedroom/Table"]
+[editable path="Bedroom/Calendar"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://wt20hvqki72q"]
+[gd_scene load_steps=28 format=4 uid="uid://wt20hvqki72q"]
 
 [ext_resource type="Script" path="res://rooms/bedroom.gd" id="1_8go0i"]
 [ext_resource type="TileSet" uid="uid://cmu6ss22756uw" path="res://rooms.tres" id="2_8gg2e"]
@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://cvogxl1ccrhnf" path="res://objects/static_interactable.tscn" id="6_2lyar"]
 [ext_resource type="PackedScene" uid="uid://bghbvcto7nwvq" path="res://objects/door.tscn" id="7_k5bti"]
 [ext_resource type="Texture2D" uid="uid://lyx3tywyiy4n" path="res://art/items.png" id="7_tfalp"]
-[ext_resource type="Script" path="res://objects/note2.gd" id="8_yjhmg"]
-[ext_resource type="Script" path="res://objects/note.gd" id="9_s7hbr"]
 [ext_resource type="Script" path="res://objects/lighter.gd" id="8_4uo1c"]
+[ext_resource type="Script" path="res://objects/note2.gd" id="8_yjhmg"]
 [ext_resource type="Script" path="res://objects/tnt.gd" id="9_6ittu"]
 [ext_resource type="Script" path="res://objects/safe.gd" id="9_p4fl5"]
+[ext_resource type="Script" path="res://objects/note.gd" id="9_s7hbr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mkbd2"]
 size = Vector2(48, 16)
@@ -95,7 +95,6 @@ script = ExtResource("5_5dpy2")
 atlas_pos_opened = Vector2i(6, 5)
 atlas_pos_closed = Vector2i(0, 3)
 door_tile_pos = Vector2i(2, 2)
-is_locked = false
 scene = "res://rooms/kitchen.tscn"
 
 [node name="CollisionShape2D" parent="Hole" index="0"]
@@ -165,6 +164,7 @@ texture = SubResource("AtlasTexture_q0o7i")
 [node name="Note1" parent="." instance=ExtResource("6_2lyar")]
 position = Vector2(-21, -5)
 script = ExtResource("8_yjhmg")
+is_interactable_once = true
 
 [node name="InteractionCollider" parent="Note1" index="0"]
 position = Vector2(2, 0)
@@ -177,6 +177,7 @@ texture = SubResource("AtlasTexture_vugdh")
 [node name="Note2" parent="." instance=ExtResource("6_2lyar")]
 position = Vector2(2, 27)
 script = ExtResource("9_s7hbr")
+is_interactable_once = true
 
 [node name="InteractionCollider" parent="Note2" index="0"]
 shape = SubResource("CircleShape2D_qokmx")

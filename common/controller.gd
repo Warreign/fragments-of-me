@@ -2,6 +2,8 @@ extends Node2D
 
 signal time_changed(past : bool)
 
+var picked_up_crowbar : bool = false
+
 @export_file("*.tscn") var menu_scene
 var is_in_menu : bool = true
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dlmqo67wybin7"]
+[gd_scene load_steps=12 format=4 uid="uid://dlmqo67wybin7"]
 
 [ext_resource type="Script" path="res://rooms/room.gd" id="1_88f2h"]
 [ext_resource type="TileSet" uid="uid://cmu6ss22756uw" path="res://rooms.tres" id="2_4baxu"]
@@ -6,18 +6,14 @@
 [ext_resource type="Script" path="res://objects/door.gd" id="5_hq4y3"]
 [ext_resource type="PackedScene" uid="uid://cvogxl1ccrhnf" path="res://objects/static_interactable.tscn" id="6_7bl43"]
 [ext_resource type="Texture2D" uid="uid://lyx3tywyiy4n" path="res://art/items.png" id="7_eoki1"]
+[ext_resource type="Script" path="res://objects/hammer.gd" id="8_318i0"]
 [ext_resource type="PackedScene" uid="uid://b4fkn0abcmmcu" path="res://objects/interactable.tscn" id="8_tdrnk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7yid"]
 size = Vector2(18.1591, 18.4452)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kspnv"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3c35f"]
-atlas = ExtResource("7_eoki1")
-region = Rect2(96, 16, 16, 16)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_my4xo"]
+radius = 6.08276
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kq4bi"]
 atlas = ExtResource("7_eoki1")
@@ -53,18 +49,9 @@ position = Vector2(8, -68.5)
 scale = Vector2(0.770965, 0.92165)
 shape = SubResource("RectangleShape2D_i7yid")
 
-[node name="Crowbar" parent="." instance=ExtResource("6_7bl43")]
-position = Vector2(-14, -32)
-rotation = -0.785506
-
-[node name="InteractionCollider" parent="Crowbar" index="0"]
-shape = SubResource("CircleShape2D_kspnv")
-
-[node name="Sprite2D" parent="Crowbar" index="2"]
-texture = SubResource("AtlasTexture_3c35f")
-
 [node name="Hammer" parent="." instance=ExtResource("6_7bl43")]
 position = Vector2(33, -32)
+script = ExtResource("8_318i0")
 
 [node name="InteractionCollider" parent="Hammer" index="0"]
 shape = SubResource("CircleShape2D_my4xo")
@@ -73,5 +60,4 @@ shape = SubResource("CircleShape2D_my4xo")
 texture = SubResource("AtlasTexture_kq4bi")
 
 [editable path="Door"]
-[editable path="Crowbar"]
 [editable path="Hammer"]

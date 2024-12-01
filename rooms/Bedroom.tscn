@@ -46,6 +46,12 @@ region = Rect2(32, 0, 16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5n7o"]
 size = Vector2(13, 16)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ls8o3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p4dw"]
+atlas = ExtResource("10_o6e7c")
+region = Rect2(48, 16, 16, 16)
+
 [node name="Bedroom" type="Node2D"]
 script = ExtResource("2_wypxn")
 
@@ -137,7 +143,18 @@ position = Vector2(5, -8)
 scale = Vector2(0.6875, 0.6875)
 texture = ExtResource("12_tmjeb")
 
+[node name="Diary" parent="." instance=ExtResource("3_gjkis")]
+position = Vector2(50, 21)
+rotation = -2.59955
+
+[node name="InteractionCollider" parent="Diary" index="0"]
+shape = SubResource("CircleShape2D_ls8o3")
+
+[node name="Sprite2D" parent="Diary" index="2"]
+texture = SubResource("AtlasTexture_6p4dw")
+
 [editable path="Bed"]
 [editable path="Window"]
 [editable path="Table"]
 [editable path="Calendar"]
+[editable path="Diary"]

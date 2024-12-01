@@ -25,7 +25,7 @@ func get_action_text():
 	if (is_locked):
 		return "Locked"
 	else:
-		return "Enter " + scene
+		return "Go to " + scene
 
 func _on_interact():
 	if (is_locked):

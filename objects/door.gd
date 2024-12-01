@@ -25,7 +25,7 @@ func get_action_text():
 	if (is_locked):
 		return "Locked"
 	else:
-		return "Go to " + scene
+		return "Go to " + scene.get_file().get_basename().capitalize()
 
 func _on_interact():
 	if (is_locked):

@@ -320,15 +320,15 @@ offset_bottom = 79.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_lvl3x")
 text = "Start Game"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_lvl3x")
 text = "Start Game"
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="start_game"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="start_game"]
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="start_game"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="quit_game"]

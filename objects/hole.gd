@@ -4,7 +4,7 @@ func get_action_text():
 	if (is_locked):
 		return ""
 	else:
-		return "Enter " + scene
+		return "Go to " + scene.get_file().get_basename().capitalize()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

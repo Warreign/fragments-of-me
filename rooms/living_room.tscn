@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://wt20hvqki72q"]
+[gd_scene load_steps=19 format=4 uid="uid://wt20hvqki72q"]
 
 [ext_resource type="Script" path="res://rooms/bedroom.gd" id="1_8go0i"]
 [ext_resource type="TileSet" uid="uid://cmu6ss22756uw" path="res://rooms.tres" id="2_8gg2e"]
@@ -7,6 +7,25 @@
 [ext_resource type="PackedScene" uid="uid://cvogxl1ccrhnf" path="res://objects/static_interactable.tscn" id="6_2lyar"]
 [ext_resource type="PackedScene" uid="uid://bghbvcto7nwvq" path="res://objects/door.tscn" id="7_k5bti"]
 [ext_resource type="Texture2D" uid="uid://lyx3tywyiy4n" path="res://art/items.png" id="7_tfalp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkbd2"]
+size = Vector2(49, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6632"]
+atlas = ExtResource("7_tfalp")
+region = Rect2(0, 48, 48, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pt423"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wp31"]
+atlas = ExtResource("7_tfalp")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tvjrf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kngn2"]
+atlas = ExtResource("7_tfalp")
+region = Rect2(64, 16, 16, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cpp80"]
 size = Vector2(22, 21)
@@ -17,6 +36,12 @@ size = Vector2(23, 18)
 [sub_resource type="AtlasTexture" id="AtlasTexture_3fafc"]
 atlas = ExtResource("7_tfalp")
 region = Rect2(128, 32, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e0t7r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0o7i"]
+atlas = ExtResource("7_tfalp")
+region = Rect2(80, 16, 16, 16)
 
 [node name="LivingRoom" type="Node2D"]
 script = ExtResource("1_8go0i")
@@ -56,10 +81,35 @@ scene = "res://rooms/kitchen.tscn"
 position = Vector2(1.71189, 28.7394)
 
 [node name="Sofa" parent="." instance=ExtResource("6_2lyar")]
+position = Vector2(23, -38)
+
+[node name="CollisionCollider" parent="Sofa/StaticBody2D" index="0"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_mkbd2")
+
+[node name="Sprite2D" parent="Sofa" index="2"]
+texture = SubResource("AtlasTexture_b6632")
 
 [node name="CoffeeTable" parent="." instance=ExtResource("6_2lyar")]
+position = Vector2(26, -15)
+
+[node name="CollisionCollider" parent="CoffeeTable/StaticBody2D" index="0"]
+position = Vector2(3, 1)
+shape = SubResource("CircleShape2D_pt423")
+
+[node name="Sprite2D" parent="CoffeeTable" index="2"]
+texture = SubResource("AtlasTexture_5wp31")
 
 [node name="Fire" parent="." instance=ExtResource("6_2lyar")]
+position = Vector2(24, -17)
+
+[node name="InteractionCollider" parent="Fire" index="0"]
+position = Vector2(-4, 3)
+shape = SubResource("CircleShape2D_tvjrf")
+
+[node name="Sprite2D" parent="Fire" index="2"]
+position = Vector2(2, 0)
+texture = SubResource("AtlasTexture_kngn2")
 
 [node name="Safe" parent="." instance=ExtResource("6_2lyar")]
 position = Vector2(42, 25)
@@ -75,5 +125,19 @@ shape = SubResource("RectangleShape2D_vqaja")
 [node name="Sprite2D" parent="Safe" index="2"]
 texture = SubResource("AtlasTexture_3fafc")
 
+[node name="TNT" parent="." instance=ExtResource("6_2lyar")]
+position = Vector2(-43, -42)
+rotation = -2.45803
+
+[node name="InteractionCollider" parent="TNT" index="0"]
+shape = SubResource("CircleShape2D_e0t7r")
+
+[node name="Sprite2D" parent="TNT" index="2"]
+texture = SubResource("AtlasTexture_q0o7i")
+
 [editable path="Hole"]
+[editable path="Sofa"]
+[editable path="CoffeeTable"]
+[editable path="Fire"]
 [editable path="Safe"]
+[editable path="TNT"]
